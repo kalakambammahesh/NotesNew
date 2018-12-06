@@ -1,0 +1,31 @@
+sys_db_object
+
+sys_dictionary
+
+sys_documentation
+
+
+web services.
+
+REST web service
+
+update set.
+
+view rules
+
+reports
+
+
+1.	Resolve: This is used for below tasks:
+•	Email ingestion and decision making for the emails received
+•	Closing the customer tasks for the replies on Customer tasks through emails.
+
+The request for travel and expense creation can be created through below methods:
+a)	Client users send emails to country specific mailboxes and depending on the condition defined in function design the RITM is created/Updated
+b)	When the Country SME submits the Milestone 3 – Hardcopy Approval and the UUID is not part of IAP system then the new RITM will be created, else it will update the existing RITM.
+ 
+IAP uses Resolve for the below components:
+•	RITM creation for Claims/Queries
+•	Updating the work notes of RITMs whenever a reply is sent for any RITM.
+•	Closing the customer tasks for the replies on Customer tasks through emails.
+•	Re-Opening the requests by replying through emails

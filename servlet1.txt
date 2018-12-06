@@ -1,0 +1,16 @@
+RequestDispatcher(Interface) :: Servlet Collaboration.
+Methods of RequestDispatcher interface
+The RequestDispatcher interface provides two methods. They are:
+
+public void forward(ServletRequest request,ServletResponse response)throws ServletException,java.io.IOException:
+Forwards a request from a servlet to another resource (servlet, JSP file, or HTML file) on the server.
+public void include(ServletRequest request,ServletResponse response)throws ServletException,java.io.IOException:
+Includes the content of a resource (servlet, JSP page, or HTML file) in the response.
+
+Object of RequestDipatcher:
+RequestDispatcher rd=request.getRequestDispatcher("servlet2");  
+//servlet2 is the url-pattern of the second servlet  
+  
+rd.forward(request, response);//method may be include or forward  
+
+forward() method in RequestDispatcher{server side/not as new request} v/s sendRedirect(){like new Request, client/server side} method of HttpServletResponse

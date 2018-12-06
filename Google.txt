@@ -1,0 +1,28 @@
+Google
+
+khalil : Javascript
+
+sys_id
+push message
+approval script
+
+
+instance:
+
+check currency and amount in dev instance
+
+aeed229047801200e0ef563dbb9a71c2
+faddcbd24f321300d3dd8020a310c754
+
+ITIL(itil) : Information Technology and Infrastructure Library
+
+https://docs.servicenow.com/bundle/geneva-servicenow-platform/page/administer/using_workflows/concept/c_WorkflowVersions.html 
+
+https://docs.servicenow.com/bundle/jakarta-servicenow-platform/page/administer/using-workflows/concept/c_WorkflowsAndDomainSeparation.html
+u_function=PTP Payments
+u_function=PTP Payments^u_procurement_category=GBS_Facility services
+
+while(getApproverDetails.next()){
+
+approver_ids = approver_ids+approvergetApproverDetail.u_user_name.getDisplayValue();
+}

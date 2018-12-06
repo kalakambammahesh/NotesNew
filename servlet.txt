@@ -1,0 +1,4 @@
+Servlet Container
+It provides the runtime environment for JavaEE (j2ee) applications.
+ The client/user can request only a static WebPages from the server.
+ If the user wants to read the web pages as per input then the servlet container is used in java.

@@ -1,0 +1,165 @@
+Business Rule:
+
+var requestor = gs.getUserID();
+var incObj = new GlideRecord('incident');
+	
+	incObj.addQuery('sys_id','=',requestor);
+	incObj.setLimit(10);
+	
+	incObj.query();
+	var count = 0;
+        var requestor1;
+	
+	while(incObj.next()){
+		count++;
+	requestor1 = incObj.u_requestor;
+        gs.info("requestor "+requestor1);
+
+	}
+
+	gs.info('Number of records Fetched: '+count);
+
+var incObj = new GlideRecord('sc_req_item');
+	
+	incObj.addQuery('u_requestor','!=','NULL');
+        
+        //incObj.addQuery('number','RITM0046010');
+	incObj.setLimit(10);
+	
+	incObj.query();
+	var count = 0;
+        
+	
+	while(incObj.next()){
+		count++;
+	 
+        gs.info("requestor "+incObj.u_requestor.getDisplayValue()+", RITM: "+incObj.number+
+", Requested For: "+incObj.request.requested_for.getDisplayValue()+", request: "+incObj.request.getDisplayValue());
+        
+
+	}
+
+	gs.info('Number of records Fetched: '+count);
+
+var incObj = new GlideRecord('sc_req_item');
+	
+	incObj.addQuery('u_requestor','!=','NULL');
+        
+        incObj.addQuery('number','RITM0046010');
+	incObj.setLimit(10);
+	
+	incObj.query();
+	var count = 0;
+        
+	
+	while(incObj.next()){
+		count++;
+	 
+        //gs.info("requestor "+incObj.u_requestor.getDisplayValue()+", RITM: "+incObj.number);
+        gs.info("currency "+incObj.u_currency.getDisplayValue());
+
+	}
+
+	gs.info('Number of records Fetched: '+count);
+
+var incObj = new GlideRecord('sc_req_item');
+	
+	incObj.addQuery('u_requestor','!=','NULL');
+        
+        incObj.addQuery('number','RITM0046010');
+	incObj.setLimit(10);
+	
+	incObj.query();
+	var count = 0;
+        
+	
+	while(incObj.next()){
+		count++;
+	 
+        gs.info("requestor "+incObj.u_requestor.getDisplayValue()+", RITM: "+incObj.number);
+       // gs.info("currency "+incObj.u_currency.u_invoice_currency);
+          gs.info("currency "+incObj.u_tne.u_currency_tne);
+
+	}
+
+	gs.info('Number of records Fetched: '+count);
+
+ var catObj = new GlideRecord('sc_request');
+
+catObj.addQuery('number','REQ0010007');
+//catObj.serLimit(10);
+
+catObj.query();
+
+
+var count = 0;
+while(catObj.next()){
+count++
+}
+
+gs.info('number: '+count);
+var catObj = new GlideRecord('sc_req_item');
+
+catObj.addQuery('number','RITM0010016');
+catObj.addQuery('request','REQ0010007');
+//catObj.serLimit(10);
+
+catObj.query();
+
+
+var count = 0;
+while(catObj.next()){
+count++
+gs.info('number: '+catObj.number);
+gs.info('cat_item: '+catObj.cat_item);
+//gs.info('request.requested_item '+catObj.request.number.requested_item);
+}
+
+gs.info('number: '+count);
+
+var catObj = new GlideRecord('sc_req_item');
+
+catObj.addQuery('number','RITM0010016');
+//catObj.addQuery('request','REQ0010007');
+//catObj.serLimit(10);
+
+catObj.query();
+
+
+var count = 0;
+while(catObj.next()){
+count++
+gs.info('number: '+catObj.number);
+gs.info('cat_item: '+catObj.cat_item.getDisplayValue());
+gs.info('request :'+catObj.request.getDisplayValue());
+//gs.info('request.requested_item '+catObj.request.number.requested_item);
+}
+
+gs.info('number: '+count);
+
+
+incObj.request.requested_for.getDisplayValue()
+
+final:
+var catObj = new GlideRecord('sc_req_item');
+
+catObj.addQuery('GOTOrequest.numberLIKEREQ0010007');
+//catObj.serLimit(10);
+
+catObj.query();
+
+
+var count = 0;
+var number = 0;
+while(catObj.next()){
+count++
+number = catObj.number;
+gs.info('number: '+number);
+}
+
+gs.info('number: '+count);
+
+
+
+
+

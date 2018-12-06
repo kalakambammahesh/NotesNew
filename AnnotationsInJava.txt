@@ -1,0 +1,17 @@
+Annotaions:
+Annotations are used to provide supplement information about a program.
+
+Annotations start with ‘@’.
+Annotations do not change action of a compiled program.
+Annotations help to associate metadata (information) to the program elements i.e. instance variables, constructors, methods, classes, etc.
+Annotations are not pure comments as they can change the way a program is treated by compiler. See below code for example.
+
+Three Types of Annotaions:
+1. Marker Annotaions: Ex: @Override, @TestAnnotaion
+2.Single value Annotaions: Ex @TestAnnotaion("testig");  testing is value
+3.Full Annotations : @TestAnnotaions(owner = "Mahesh", value="K")
+
+***Java defines seven built-in annotations.
+
+Four are imported from java.lang.annotation: @Retention, @Documented, @Target, and @Inherited.
+Three are included in java.lang: @Deprecated, @Override and @SuppressWarnings

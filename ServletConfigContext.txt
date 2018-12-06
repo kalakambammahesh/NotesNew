@@ -1,0 +1,69 @@
+*******Sevlet Config Interface:
+An object of ServletConfig is created by the web container for each servlet. 
+This object can be used to get configuration information from web.xml file.
+
+Methods of the Servlet Config interface:
+public String getInitParameter(String name):
+		Returns the parameter value for the specified parameter name.
+public Enumeration getInitParameterNames():
+		Returns an enumeration of all the initialization parameter names.
+public String getServletName():
+		Returns the name of the servlet.
+public ServletContext getServletContext():
+		Returns an object of ServletContext.
+
+Creating Object of ServletConfig Interface:
+	ServletConfig config = getServletConfig();
+
+****ServeltContext :
+__-__--__---------_
+An object of ServletContext is created by the web container at time of deploying the project.
+ This object can be used to get configuration information from web.xml file. There is only one ServletContext object per web application.
+
+If any information is shared to many servlet,
+ it is better to provide it from the web.xml file using the <context-param> element.
+---Advancages;
+eb application.
+
+If any information is shared to many servlet, it is better to provide it from the web.xml file using the <context-param> element.
+
+Advantage of ServletContext
+Easy to maintain if any information is shared to all the servlet, it is better to make it available for all the servlet. We provide this information from the web.xml file, so if the information is changed, we don't need to modify the servlet. Thus it removes maintenance problem.
+
+Usage of ServletContext Interface
+There can be a lot of usage of ServletContext object. Some of them are as follows:
+
+The object of ServletContext provides an interface between the container and servlet.
+The ServletContext object can be used to get configuration information from the web.xml file.
+The ServletContext object can be used to set, get or remove attribute from the web.xml file.
+The ServletContext object can be used to provide inter-application communication.
+
+Commonly used methods of ServletContext interface
+There is given some commonly used methods of ServletContext interface.
+public String getInitParameter(String name):Returns the parameter value for the specified parameter name.
+public Enumeration getInitParameterNames():Returns the names of the context's initialization parameters.
+public void setAttribute(String name,Object object):sets the given object in the application scope.
+public Object getAttribute(String name):Returns the attribute for the specified name.
+public Enumeration getInitParameterNames():Returns the names of the context's initialization parameters as an Enumeration of String objects.
+public void removeAttribute(String name):Removes the attribute with the given name from the servlet context
+
+Object ServletContext interface;
+
+ServletContext application = getServletConfig().getServletContext();
+ServletContext application = getServletContext();
+
+Attribute in Servlet:
+An attribute in servlet is an object that can be set, get or removed from one of the following scopes:
+
+request scope
+session scope
+application scope
+The servlet programmer can pass informations from one servlet to another using attributes. 
+It is just like passing object from one class to another so that we can reuse the same object again and again.
+
+Attribute specific methods of ServletRequest, HttpSession and ServletContext interface
+There are following 4 attribute specific methods. They are as follows:
+public void setAttribute(String name,Object object):sets the given object in the application scope.
+public Object getAttribute(String name):Returns the attribute for the specified name.
+public Enumeration getInitParameterNames():Returns the names of the context's initialization parameters as an Enumeration of String objects.
+public void removeAttribute(String name):Removes the attribute with the given name from the servlet context.

@@ -1,0 +1,5 @@
+Moderate Questions like, 
+1. Reverse the linked list.
+2. Find loop in linked list.
+3. Find the hight of tree.
+4. Implement own arrayList.

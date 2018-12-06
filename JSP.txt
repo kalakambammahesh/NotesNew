@@ -1,0 +1,6 @@
+JSP : extension to servlet because it provides more functionality than servlet such as expression language, JSTL.
+
+JSP Sciptlet tag: can only declare variables. 2. is placed in _jspService();
+JSP Declaration Tag: can declare variables and method. 2. is placed outside of _jspService()
+
+_jspService() can't be overriden. 

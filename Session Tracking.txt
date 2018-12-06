@@ -1,0 +1,27 @@
+Http is a state less protocal. It takes evry request as new request. To store user info we go for Session Tracking.
+
+Session Tracking and Session Management:
+
+Session Tracking
+Session Tracking Techniques
+Session simply means a particular interval of time.
+
+Session Tracking is a way to maintain state (data) of an user. It is also known as session management in servlet
+
+Session Tracking:
+
+Cookies
+Hidden Form Field
+URL Rewriting
+HttpSession
+
+1.Cookies: Class, Name, value of Cookie(Name, value) ,method:setMaxAge()
+There are 2 types of cookies in servlets.
+
+Non-persistent cookie(Valid for Single Session)
+Persistent cookie(Valid for Multiple Session)
+
+##Other methods required for using Cookies:
+For adding cookie or getting the value from the cookie, we need some methods provided by other interfaces. They are:
+public void addCookie(Cookie ck):method of HttpServletResponse interface is used to add cookie in response object.
+public Cookie[] getCookies():method of HttpServletRequest interface is used to return all the cookies from the browser.

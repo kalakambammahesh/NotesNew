@@ -1,0 +1,21 @@
+Autowiring
+
+byName:beanid and ref variable must be same
+byType:no need of beanid ad ref variable 
+constructor:
+noautowiring:
+
+Dependency Injection with Factory Method in Spring
+1.Factory-menthod:A method that return instance of a class
+2.Factory-Bean
+
+
+Factory Method types:
+ A static factory method that returns instance of its own class. It is used in singleton design pattern.
+	<bean id="a" class="com.javatpoint.A" factory-method="getA"></bean>  
+A static factory method that returns instance of another class. It is used instance is not known and decided at runtime
+	<bean id="b" class="com.javatpoint.A" factory-method="getB"></bean>  
+
+A non-static factory method that returns instance of another class. It is used instance is not known and decided at runtime.
+	<bean id="a" class="com.javatpoint.A"></bean>  
+	<bean id="b" class="com.javatpoint.A" factory-method="getB" factory-bean="a"></bean>  

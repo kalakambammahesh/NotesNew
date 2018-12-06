@@ -1,0 +1,3 @@
+MVC:
+MVC stands for Model View and Controller.
+ It is a design pattern that separates the business logic, presentation logic and data.

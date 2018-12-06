@@ -1,0 +1,16 @@
+In spring DI is done by IOC
+
+Advantages Of Spring:
+1.Predefined Templates
+2.Loose Coupling(Implementaition of DI)
+3.Easy to test(Bcz of DI)
+4.LightWeight(Bcz of implementation of POJO)
+5.Fast Development
+6.Powerful Abstraction
+
+Use ApplicationContext Over BeanFactory.
+
+Dependency Injection: By Constructor or Setter Method.
+
+
+https://accentureinternal.service-now.com/support_portal/?id=iframe_catalog_request&sys_id=538c9c9f135b2e40380ddbf18144b07d

@@ -1,0 +1,30 @@
+**A Java Bean is a java class that should follow following conventions:
+
+It should have a no-arg constructor.
+It should be Serializable.
+It should provide methods to set and get the values of the properties, known as getter and setter methods.
+Why use Java Bean?
+According to Java white paper, it is a reusable software component.
+ A bean encapsulates many objects into one object, so we can access this object from multiple places.
+ Moreover, it provides the easy maintenance.
+
+Syntax:
+<jsp:useBean id= "instanceName" scope= "page | request | session | application"   
+class= "packageName.className" type= "packageName.className"  
+beanName="packageName.className | <%= expression >" >  
+</jsp:useBean> 
+
+jsp:setProperty  action Tag
+<jsp:setProperty name="instanceOfBean" property= "*"   |   
+property="propertyName" param="parameterName"  |   
+property="propertyName" value="{ string | <%= expression %>}"   
+/>  
+
+<jsp:setProperty name="bean" property="*"/> //all the values of request in the bean
+<jsp:setProperty name="bean" property ="username"/> //to set value of the incoming specific property
+<jsp:setProperty name="bean" property="username" value="kumar"/> //to set a specific value in the property
+
+jsp:getProperty action Tag
+<jsp:getProperty name="instanceOfBean" prroperty="propertyName"/>
+
+
