@@ -1,0 +1,195 @@
+# NotesNew
+Three types of SQL statements
+1) DDL (Data Definition Language): 
+It is used to define the database structure such as tables. 
+It includes three statements such as Create, Alter, and Drop.
+ALTER: The ALTER table is used for modifying the existing table object in the database.
+ALTER TABLE table_name
+ADD column_name datatype
+
+OR
+
+ALTER TABLE table_name
+
+DROP COLUMN column_name
+2) DML (Data Manipulation Language):
+ These statements are used to manipulate the data in records. 
+Commonly used DML statements are Insert, Update, and Delete.
+
+3) DCL (Data Control Language):
+ These statements are used to set privileges such as Grant and Revoke database access permission to the specific user.
+
+Null:A field with a NULL value is a field with no value.
+we can't check it with <, >, =
+**SELECT Syntax:
+SELECT column_names
+FROM table_name
+WHERE column_name IS NULL/IS NOT NULL
+
+**UPDATE
+UPDATE table_name
+SET columnName = value
+where columnName = value;
+Nota::Be careful when updating records. If you omit the WHERE clause, ALL records will be updated!
+
+**DELETE
+The DELETe statement is used to delete the existing records in a table.
+DROP column, DELETE record.
+SYNTAX : DELETE FROM table_name WHERE column_name="value";
+
+**SELECT TOP
+SYNTAX: SELECT TOP number|percent column_name(s)
+FROM table_name
+WHERE condition;
+**Aggregate Function:
+Min, Max, Sum, Count, Avg, Sum....
+
+**LIKE operator
+Syntax: SELECT column1, column2,...
+FROM table_name WHERE columnN LIKE pattern;
+pattern may be[a-zA-z0-9]
+
+**IN operator
+SELECT column_name(s)
+FROM table_name
+WHERE column_name IN(value1, value2..)
+or
+SELECT column1, column2,..
+FROM table_name
+WHERE column_name(SELECT statement);
+
+**BETWEEN operator
+SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN/NOT BETWEEN value1 AND value2;
+
+**DATE Fetching : 
+SELECT * FROM Orders
+WHERE OrderDate BETWEEN #01/07/1996# AND #31/07/1996#;
+
+or
+SELECT * FROM Orders
+WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
+
+**SQL Aliases
+SQL aliases are used to give a table, or a column in a table, a temporary name.
+Aliases are often used to make column names more readable.
+An alias only exists for the duration of the query.
+
+Syntax:For column
+Select column1_name AS alias_name
+from table_name;
+
+Syntax: For table alias
+Select column(s)
+from table_name AS alias_name;
+ use [] if the alias_name has spaces
+ use concat/+ to add more than one columns
+
+SQL JOIN
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+**Types
+Different Types of SQL JOINs
+Here are the different types of the JOINs in SQL:
+
+(INNER) JOIN: Returns records that have matching values in both tables
+LEFT (OUTER) JOIN: Return all records from the left table, and the matched records from the right table
+RIGHT (OUTER) JOIN: Return all records from the right table, and the matched records from the left table
+FULL (OUTER) JOIN: Return all records when there is a match in either left or right table
+
+INNER JOIN:
+Syntax:
+Select column_name(s)
+from table_name1
+INNER JOIN table_name2 ON table1.column_name = table2.column_name;
+
+EX:select orders.OrderId, customers.customerName, shippers.shipperName
+from ((orders INNER JOIN customers On orders.customerId = customers.customerId) INNER JOIN shippers on orders.shipperId = shippers.shipperId);
+ 
+LEFT JOIN:Note: In some databases LEFT JOIN is called LEFT OUTER JOIN   
+
+Syntax:
+Select column_name(s)
+from table1     
+LEFT JOIN table2 ON table1.column_name = table2.column_name;
+
+***RIGHT JOIN : Note: In some databases RIGHT JOIN is called RIGHT OUTER JOIN.
+Syntax:
+Select column_name(s)
+FROM table1 
+RIGHT JOIN table2 ON table1.column_name = table2.column_name;
+
+
+FULL OUTER JOIN:
+Syntax:
+Select column_name(s) 
+FROM table1
+FULL OUTER JOIN table2 ON table1.column_name = table2.column_name;
+
+**SELF JOIN
+Syntax:
+SELECT column_name(s)
+FROM table1 T1, table1 T2
+WHERE condition;
+
+SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
+FROM Customers A, Customers B
+WHERE A.CustomerID <> B.CustomerID
+AND A.City = B.City 
+ORDER BY A.City;
+
+**The SQL UNION Operator
+The UNION operator is used to combine the result-set of two or more SELECT statements.
+
+Each SELECT statement within UNION must have the same number of columns
+The columns must also have similar data types
+The columns in each SELECT statement must also be in the same order
+
+**Syntax:
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+
+to include duplicates as well use UNION ALL
+
+SELECT column_name(s) FROM table1
+UNION ALL
+SELECT column(s) FROM table2;
+
+Ex:SELECT City FROM Customers
+UNION ALL
+SELECT City FROM Suppliers
+ORDER BY City;
+
+
+**Group By
+The GROUP BY statement is often used with aggregate functions (COUNT, MAX, MIN, SUM, AVG)
+to group the result-set by one or more columns.
+
+**Syntax:
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s);
+
+The SQL HAVING Clause
+The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
+
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+HAVING condition
+ORDER BY column_name(s);
+
+**The SQL EXISTS Operator
+The EXISTS operator is used to test for the existence of any record in a subquery.
+
+The EXISTS operator returns true if the subquery returns one or more records.
+
+SELECT column_name(s)
+FROM table_name
+WHERE EXISTS
+(SELECT column_name FROM table_name WHERE condition);
