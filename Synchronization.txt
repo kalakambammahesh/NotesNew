@@ -1,0 +1,82 @@
+**Synchronization in Java:
+
+Synchronization in java is the capability to control the access of multiple threads to any shared resource.
+Java Synchronization is better option where we want to allow only one thread to access the shared resource.
+
+The synchronization is mainly used to
+
+To prevent thread interference.
+To prevent consistency problem.
+
+__--Thread Synchronization
+There are two types of thread synchronization mutual exclusive and inter-thread communication.
+
+Mutual Exclusive
+Synchronized method.
+Synchronized block.
+static synchronization.
+Cooperation (Inter-thread communication in java)
+
+**Concept of Lock in Java
+Synchronization is built around an internal entity known as the lock or monitor.
+ Every object has an lock associated with it. By convention,
+ a thread that needs consistent access to an object's fields has to acquire the object's lock before accessing them, 
+and then release the lock when it's done with them.
+
+From Java 5 the package java.util.concurrent.locks contains several lock implementations.
+
+
+next ?
+Synchronization in Java
+Synchronization in java is the capability to control the access of multiple threads to any shared resource.
+
+Java Synchronization is better option where we want to allow only one thread to access the shared resource.
+
+Why use Synchronization
+The synchronization is mainly used to
+
+To prevent thread interference.
+To prevent consistency problem.
+Types of Synchronization
+There are two types of synchronization
+
+Process Synchronization
+Thread Synchronization
+Here, we will discuss only thread synchronization.
+
+Thread Synchronization
+There are two types of thread synchronization mutual exclusive and inter-thread communication.
+
+Mutual Exclusive
+Synchronized method.
+Synchronized block.
+static synchronization.
+Cooperation (Inter-thread communication in java)
+
+ 
+Mutual Exclusive
+Mutual Exclusive helps keep threads from interfering with one another while sharing data.
+ This can be done by three ways in java:
+
+1.by synchronized method
+2.by synchronized block
+3.by static synchronization
+
+2)Synchronized Block:
+Points to remember for Synchronized block
+Synchronized block is used to lock an object for any shared resource.
+Scope of synchronized block is smaller than the method.
+
+**Syntax:
+synchronized(object reference expression){//
+//code of the block
+}
+
+3)Static synchronization
+If you make any static method as synchronized, the lock will be on the class not on object.
+
+****Why wait(), notify() and notifyAll() methods are defined in Object class not Thread class?
+It is because they are related to lock and object has a lock.
+
+
+Interthread communication : wait() notify() notifyAll();;
