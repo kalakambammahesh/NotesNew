@@ -1,0 +1,135 @@
+Binary Search and FIFO
+Select INTO:
+The SELECT INTO statement copies data from one table into a new table.
+
+Syntax:
+SELECT *
+INTO newtable [IN externaldb]
+FROM oldtable
+WHERE condition;
+
+The SQL INSERT INTO SELECT Statement
+The INSERT INTO SELECT statement copies data from one table and inserts it into another table.
+
+INSERT INTO table2
+SELECT * FROM table1
+WHERE condition;
+
+INSERT INTO table2 (column1, column2, column3, ...)
+SELECT column1, column2, column3, ...
+FROM table1
+WHERE condition;
+
+CASE;
+
+Syntax:
+CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    WHEN conditionN THEN resultN
+    ELSE result
+END;
+
+
+NULL Functions in java;
+SQL IFNULL(){MySQL}, ISNULL(){SQL}, COALESCE(){MySQL}, and NVL(){Oracle} Functions
+
+If some column is optional when creation (Here UnitsOnOrder)
+
+SELECT ProductName, UnitPrice * (UnitsInStack + UnitsOnOrder);
+
+Select ProductName, UnitPrice * (UnitsINStock + ISNULL(UnitsOnOder, 0));
+
+or By using COALESCE()
+
+SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsONOrder, 0));
+
+What is a Stored Procedure?
+A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.
+
+So if you have an SQL query that you write over and over again, save it as a stored procedure, and then just call it to execute it.
+
+You can also pass parameters to a stored procedure, so that the stored procedure can act based on the parameter value(s) that is passed.
+
+CREATE PROCEDURE procedureName
+As sql_statement
+GO;
+
+EXEC procedureName;	
+
+Stored Procedure with parameters 
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30)
+As 
+Select * FROM Customers where city = @City;
+Go;
+
+EXEC SelectAllCustomers city = "NameOfTheCity";
+
+Commenst 
+Single Line : --
+Multi Line : /*This is multi com */
+
+SQL DATABASE:::
+CREAT DATABASE data_base_Name;
+SHOW DATABASE; : List the set of databases in the database;
+DROP DATABASE data_base_name; : Delete the database which preset
+
+The SQL BACKUP DATABASE Statement::
+BACKUP DATABASE data_base_name
+TO DISK = 'filepath';
+
+The SQL BACKUP WITH DIFFERENTIAL Statement
+A differential back up only backs up the parts of the database that have changed since the last full database backup.
+
+BACKUP DATABASE data_base_name;
+TO DISK = 'filepath'
+WITH DIFFERENTIAL;
+
+SQL CREATE Table:
+
+CREATE TABLE table_name(
+	column1 datatype,
+	column2 datatype,
+	.
+	.
+	columnn datatype);
+Creating table using existing table
+CREATE TABLE new_table_name AS
+    SELECT column1, column2,...
+    FROM existing_table_name
+    WHERE ....;
+DROP TABLE table_name;(complete deletes data and table)
+TRUNCATE TABLE table_name; only deletes data not table(which means structure of table)
+
+SQL ALTER TABLE Statement
+The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.
+
+The ALTER TABLE statement is also used to add and drop various constraints on an existing table.
+
+ALTER TABLE table_name
+ADD coulumnName datatype;
+
+ALTER TABLE table_name
+DROP COLUMN column_name;
+
+Modify column:
+ALTER TABLE table_name
+ALTER COLUMN column_name datatype;
+
+SQL Constrains
+Constraints can be specified when the table is created with the CREATE TABLE statement, 
+or after the table is created with the ALTER TABLE statement.
+
+CREATE TABLE table_name(
+	column1 datatype constraint,
+	colmn2 datatype constraint,
+	..
+	column3 datatype constratint);
+
+NOT NULL - Ensures that a column cannot have a NULL value
+UNIQUE - Ensures that all values in a column are different
+PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+FOREIGN KEY - Uniquely identifies a row/record in another table
+CHECK - Ensures that all values in a column satisfies a specific condition
+DEFAULT - Sets a default value for a column when no value is specified
+INDEX - Used to create and retrieve data from the database very quickly
