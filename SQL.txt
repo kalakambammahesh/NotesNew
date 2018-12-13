@@ -1,0 +1,36 @@
+**Important SQL Commands...:
+
+SELECT - extracts data from a database
+UPDATE - updates data in a database
+DELETE - deletes data from a database
+INSERT INTO - inserts new data into a database
+CREATE DATABASE - creates a new database
+ALTER DATABASE - modifies a database
+CREATE TABLE - creates a new table
+ALTER TABLE - modifies a table
+DROP TABLE - deletes a table
+CREATE INDEX - creates an index (search key)
+DROP INDEX - deletes an index
+
+**TO get distinct values of column(Removing dublicates):
+	SELECT DISTINCT column1, colun2,.... from table_name;
+	SELECT COUNT(DISTINCT column) from table_name;
+
+Operator	Description
+=	Equal
+<>	Not equal. Note: In some versions of SQL this operator may be written as !=
+>	Greater than
+<	Less than
+>=	Greater than or equal
+<=	Less than or equal
+BETWEEN	Between a certain range
+LIKE	Search for a pattern
+IN	To specify multiple possible values for a column
+
+ORDER BY
+Syntax : Select column1, colmn2 from table_name ORDER BY column1, column2... ASC|DSC
+
+INSERT INTO:
+2 ways
+INSERT INTO table_name values(value1, value2,....);
+INSERT INTO table_name (column1, column2,...) VALUES(value1, value2, value3);

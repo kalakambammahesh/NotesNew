@@ -1,0 +1,14 @@
+
+next ?? prev
+Spring MVC Form Text Field
+
+Syntax : <input path="name"/>
+<form:input type=?email? path="email" />  
+<form: input type=?Data? path ="date"/>
+
+Spring MVC Form Radio Button
+
+Syntax : 
+<form:radiobutton path="abc" value="xyz"/>
+<form:radiobuttons path="abc" value="${xyz}"/>
+
