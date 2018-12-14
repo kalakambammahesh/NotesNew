@@ -1,6 +1,6 @@
 CharSquence is interface implemented by both immutable and mutable classes.
 String : It is a class and is immutable. it implements CharSequence, Serializable and Comparable<String> interfaces.
-String Builder is a Class: It is muttable.
-StringBuffer is a class and is muttable.
+String Builder is a Class: It is muttable, used when thread safety is not requried.
+StringBuffer is a class and is muttable, used when thread safety is requried.
 Marker INteface are empty: Example Serilizale Clonnable and Remote Interface....
 
