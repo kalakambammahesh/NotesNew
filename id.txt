@@ -11,6 +11,3 @@ Advantages Of Spring:
 Use ApplicationContext Over BeanFactory.
 
 Dependency Injection: By Constructor or Setter Method.
-
-
-https://accentureinternal.service-now.com/support_portal/?id=iframe_catalog_request&sys_id=538c9c9f135b2e40380ddbf18144b07d
